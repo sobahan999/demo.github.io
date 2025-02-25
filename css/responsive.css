@@ -1,0 +1,146 @@
+/* Mobile First Approach */
+:root {
+    --sidebar-width: 100%;
+    --header-height: 60px;
+}
+
+/* Common Mobile Styles */
+@media screen and (max-width: 768px) {
+    .admin-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: fixed;
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        z-index: 1000;
+        transform: translateY(calc(100% - 60px));
+        transition: transform 0.3s;
+    }
+
+    .sidebar.expanded {
+        transform: translateY(0);
+    }
+
+    .brand {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    .menu-group {
+        width: 100%;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-bottom: 60px;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .search input {
+        width: 150px;
+    }
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    :root {
+        --sidebar-width: 200px;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 1025px) {
+    :root {
+        --sidebar-width: 280px;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Large Desktop Styles */
+@media screen and (min-width: 1441px) {
+    :root {
+        --sidebar-width: 300px;
+    }
+
+    .container {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .sidebar, .top-bar {
+        display: none;
+    }
+
+    .main-content {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #ffffff;
+        --card-bg: #2d2d2d;
+    }
+}
+
+/* Portrait/Landscape Orientations */
+@media screen and (orientation: portrait) {
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (orientation: landscape) and (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+    }
+
+    .sidebar:hover {
+        width: 280px;
+    }
+
+    .brand h2, .menu-item span {
+        display: none;
+    }
+
+    .sidebar:hover .brand h2,
+    .sidebar:hover .menu-item span {
+        display: block;
+    }
+}

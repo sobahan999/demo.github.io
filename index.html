@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#4a90e2">
+    <title>অ্যাডমিন প্যানেল</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preload" href="https://fonts.maateen.me/kalpurush/font.css" as="style">
+    <link rel="preload" href="https://fonts.maateen.me/bangla/font.css" as="style">
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="sidebar">
+            <div class="brand">
+                <img src="assets/logo.png" alt="Logo">
+                <h2>অ্যাডমিন প্যানেল</h2>
+            </div>
+            <div class="menu">
+                <div class="menu-group">
+                    <h3>মূল মেনু</h3>
+                    <a href="#" class="menu-item active" data-page="dashboard">
+                        <i class="fas fa-home"></i> ড্যাশবোর্ড
+                    </a>
+                </div>
+                
+                <div class="menu-group">
+                    <h3>অর্ডার ম্যানেজমেন্ট</h3>
+                    <a href="#" class="menu-item" data-page="orders-new">
+                        <i class="fas fa-shopping-cart"></i> নতুন অর্ডার
+                    </a>
+                    <a href="#" class="menu-item" data-page="orders-processing">
+                        <i class="fas fa-clock"></i> প্রক্রিয়াধীন
+                    </a>
+                    <a href="#" class="menu-item" data-page="orders-completed">
+                        <i class="fas fa-check-circle"></i> সম্পন্ন
+                    </a>
+                </div>
+
+                <div class="menu-group">
+                    <h3>প্রোডাক্ট</h3>
+                    <a href="#" class="menu-item" data-page="products-list">
+                        <i class="fas fa-box"></i> সকল প্রোডাক্ট
+                    </a>
+                    <a href="#" class="menu-item" data-page="products-add">
+                        <i class="fas fa-plus"></i> নতুন প্রোডাক্ট
+                    </a>
+                    <a href="#" class="menu-item" data-page="categories">
+                        <i class="fas fa-tags"></i> ক্যাটাগরি
+                    </a>
+                </div>
+
+                <!-- More menu groups... -->
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search">
+                    <input type="text" placeholder="অনুসন্ধান করুন...">
+                </div>
+                <div class="user-menu">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="profile">
+                        <img src="assets/avatar.png" alt="Profile">
+                        <span>অ্যাডমিন</span>
+                    </div>
+                </div>
+            </header>
+
+            <div id="main-container" class="content">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </main>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/pages.js"></script>
+</body>
+</html>
